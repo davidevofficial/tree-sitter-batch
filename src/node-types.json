@@ -1,49 +1,24 @@
 [
   {
-    "type": "builtin_command",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "command",
+    "type": "line",
     "named": true,
     "fields": {
-      "command": {
+      "argument": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
-            "type": "builtin_command",
-            "named": true
-          },
-          {
-            "type": "identifier",
+            "type": "argument",
             "named": true
           }
         ]
-      }
-    },
-    "children": {
-      "multiple": false,
-      "required": false,
-      "types": [
-        {
-          "type": "arguments",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "label",
-    "named": true,
-    "fields": {
-      "name": {
+      },
+      "keyword": {
         "multiple": false,
         "required": true,
         "types": [
           {
-            "type": "identifier",
+            "type": "word",
             "named": true
           }
         ]
@@ -60,26 +35,14 @@
       "required": false,
       "types": [
         {
-          "type": "command",
-          "named": true
-        },
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "empty_line",
-          "named": true
-        },
-        {
-          "type": "label",
+          "type": "line",
           "named": true
         }
       ]
     }
   },
   {
-    "type": ":",
+    "type": "\r\n",
     "named": false
   },
   {
@@ -87,63 +50,11 @@
     "named": false
   },
   {
-    "type": "arguments",
+    "type": "argument",
     "named": true
   },
   {
-    "type": "call",
-    "named": false
-  },
-  {
-    "type": "comment",
+    "type": "word",
     "named": true
-  },
-  {
-    "type": "echo",
-    "named": false
-  },
-  {
-    "type": "else",
-    "named": false
-  },
-  {
-    "type": "empty_line",
-    "named": true
-  },
-  {
-    "type": "exit",
-    "named": false
-  },
-  {
-    "type": "for",
-    "named": false
-  },
-  {
-    "type": "goto",
-    "named": false
-  },
-  {
-    "type": "identifier",
-    "named": true
-  },
-  {
-    "type": "if",
-    "named": false
-  },
-  {
-    "type": "pause",
-    "named": false
-  },
-  {
-    "type": "rem",
-    "named": false
-  },
-  {
-    "type": "set",
-    "named": false
-  },
-  {
-    "type": "start",
-    "named": false
   }
 ]

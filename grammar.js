@@ -8,57 +8,17 @@
 // @ts-check
 
 module.exports = grammar({
-  name: "batch",
+  name: 'batch',
+    rules: {
+        source_file: $ => repeat(seq($.line, optional('\r\n'))),
 
-  extras: $ => [
-      /\s/  // Whitespace and comments
-    ],
-
-  rules: {
-    // TODO: add the actual grammar rules
-    source_file: $ => repeat($._statement),
-    _statement: $ => choice(
-        $.command,
-        $.label,
-        $.comment,
-        $.empty_line
-    ),
-
-    command: $ => seq(
-        optional('@'),
-        field('command', choice(
-          $.builtin_command,
-          $.identifier
-        )),
-        optional($.arguments)
-    ),
-
-        builtin_command: $ => choice(
-          'echo', 'set', 'if', 'else', 'for', 'goto',
-          'call', 'start', 'exit', 'pause', 'rem'
+        line: $ => seq(
+          optional('@'),
+          field("keyword", $.word),
+          optional(seq(/\s+/, field("argument", $.argument)))
         ),
 
-        arguments: $ => /.*/,
-
-        label: $ => seq(
-          ':',
-          field('name', $.identifier)
-        ),
-
-        variable: $ => seq(
-          '%',
-          field('name', $.identifier),
-          '%'
-        ),
-
-        comment: $ => token(seq(
-          choice('REM', '::'),
-          /.*/
-        )),
-
-        identifier: $ => /[a-zA-Z_][a-zA-Z0-9_]*/,
-
-        empty_line: $ => /\r?\n/
-
-  }
+        word: $ => token(/[^\s]+/),
+        argument: $ => token(/[^\r\n]*/)
+    }
 });
