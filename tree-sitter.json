@@ -16,7 +16,7 @@
     }
   ],
   "metadata": {
-    "version": "0.1.0",
+    "version": "0.0.1",
     "license": "MIT",
     "description": "Batch tree sitter",
     "authors": [
@@ -32,11 +32,11 @@
   },
   "bindings": {
     "c": true,
-    "go": true,
+    "go": false,
     "node": true,
-    "python": true,
+    "python": false,
     "rust": true,
-    "swift": true,
+    "swift": false,
     "zig": false
   }
 }
