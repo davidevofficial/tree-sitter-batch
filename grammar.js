@@ -40,7 +40,7 @@ module.exports = grammar({
     variable_reference: $ => prec(2, seq('%', alias($.identifier, 'variable_name'), '%')),
 
     // Keywords (predefined list of Batch commands)
-    keyword: $ => prec(1, seq(optional('@'),choice(
+    keyword: $ => prec(1, seq(optional('@'), choice(
       "ECHO", "SET", "IF", "GOTO", "EXIT", "FOR", "REM", "PAUSE", "CLS","echo", "set", "if","goto", "exit", "for", "rem", "pause", "cls", "VER", "ASSOC", "CD", "COPY", "DEL", "DIR", "DATE", "MD", "MOVE", "PATH", "PROMPT", "RD", "REN", "START", "TIME", "TYPE", "VOL", "ATTRIB", "CHKDSK", "CHOICE", "CMD", "COMP", "CONVERT", "DRIVERQUERY", "EXPAND", "FIND", "FORMAT", "HELP", "IPCONFIG", "LABEL", "NET", "PING", "SHUTDOWN", "SORT", "SUBST", "SYSTEMINFO", "TASKKILL", "TASKLIST", "XCOPY", "TREE", "FC", "DISKPART", "TITLE", "ver", "assoc", "cd", "copy", "del", "dir", "date", "md", "move", "path", "prompt", "rd", "ren", "start", "time", "type", "vol", "attrib", "chkdsk", "choice", "cmd", "comp", "convert", "driverquery", "expand", "find", "format", "help", "ipconfig", "label", "net", "ping", "shutdown", "sort", "subst", "systeminfo", "taskkill", "tasklist", "tasklist", "xcopy", "tree", "fc", "diskpart", "title"
     ), optional(choice($.string, $.number))
     )),
@@ -58,7 +58,7 @@ module.exports = grammar({
     // Strings (e.g., "Hello World!")
     string: $ => seq(
       '"',
-      repeat(choice(/[^"\n]/)), // Match anything except a double-quote or newline
+      repeat(/[^"\n]/), // Match anything except a double-quote or newline
       '"'
     ),
     // Numbers (e.g., 1234)
