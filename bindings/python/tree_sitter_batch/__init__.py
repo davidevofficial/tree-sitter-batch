@@ -1,4 +1,4 @@
-"""Batch tree sitter"""
+"""Batch grammar for tree-sitter"""
 
 from importlib.resources import files as _files
 

@@ -1,12 +1,11 @@
 {
   "name": "tree-sitter-batch",
   "version": "0.1.0",
-  "description": "Batch tree sitter",
+  "description": "Batch grammar for tree-sitter",
   "repository": "https://github.com/davidevofficial/tree-sitter-batch",
-  "funding": "https://github.com/davidevofficial/tree-sitter-batch",
   "license": "MIT",
   "author": {
-    "name": "Davidevofficial",
+    "name": "davidevofficial",
     "email": "davidevufficial@gmail.com"
   },
   "main": "bindings/node",
@@ -33,7 +32,7 @@
   },
   "devDependencies": {
     "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.25.1"
+    "tree-sitter-cli": "^0.24.4"
   },
   "peerDependencies": {
     "tree-sitter": "^0.21.1"

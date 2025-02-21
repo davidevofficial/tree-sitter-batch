@@ -1,42 +1,35 @@
 {
-  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
       "name": "batch",
       "camelcase": "Batch",
-      "title": "Batch",
-      "scope": "source.dosbatch",
+      "scope": "source.batch",
       "file-types": [
-        "dosbatch",
-        "bat",
-        "batch"
+        ".bat"
       ],
-      "injection-regex": "^batch$",
-      "class-name": "TreeSitterBatch"
+      "injection-regex": "^batch$"
     }
   ],
   "metadata": {
-    "version": "0.0.1",
+    "version": "0.1.0",
     "license": "MIT",
-    "description": "Batch tree sitter",
+    "description": "Batch grammar for tree-sitter",
     "authors": [
       {
-        "name": "Davidevofficial",
+        "name": "davidevofficial",
         "email": "davidevufficial@gmail.com"
       }
     ],
     "links": {
-      "repository": "https://github.com/davidevofficial/tree-sitter-batch",
-      "funding": "https://github.com/davidevofficial/tree-sitter-batch"
+      "repository": "https://github.com/davidevofficial/tree-sitter-batch"
     }
   },
   "bindings": {
     "c": true,
-    "go": false,
+    "go": true,
     "node": true,
-    "python": false,
+    "python": true,
     "rust": true,
-    "swift": false,
-    "zig": false
+    "swift": true
   }
 }
