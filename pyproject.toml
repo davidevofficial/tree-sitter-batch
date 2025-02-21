@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tree-sitter-batch"
-description = "Batch tree sitter"
-version = "0.0.1"
+description = "Batch grammar for tree-sitter"
+version = "0.1.0"
 keywords = ["incremental", "parsing", "tree-sitter", "batch"]
 classifiers = [
   "Intended Audience :: Developers",
@@ -13,18 +13,17 @@ classifiers = [
   "Topic :: Text Processing :: Linguistic",
   "Typing :: Typed",
 ]
-authors = [{ name = "Davidevofficial", email = "davidevufficial@gmail.com" }]
-requires-python = ">=3.10"
+authors = [{ name = "davidevofficial", email = "davidevufficial@gmail.com" }]
+requires-python = ">=3.9"
 license.text = "MIT"
 readme = "README.md"
 
 [project.urls]
 Homepage = "https://github.com/davidevofficial/tree-sitter-batch"
-Funding = "https://github.com/davidevofficial/tree-sitter-batch"
 
 [project.optional-dependencies]
-core = ["tree-sitter~=0.24"]
+core = ["tree-sitter~=0.22"]
 
 [tool.cibuildwheel]
-build = "cp310-*"
+build = "cp39-*"
 build-frontend = "build"
